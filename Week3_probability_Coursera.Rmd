@@ -75,7 +75,7 @@ occurrence).
 
 1.  Fill in the blank: A streak length of 1 means one \_\_\_ followed by one miss.
 <ol>
-<li> hit </li>
+<li> hit <- </li>
 <li> miss </li>
 </ol>
 
@@ -84,7 +84,7 @@ occurrence).
 miss that ended the preceeding streak.
 <ol>
 <li> hit </li>
-<li> miss </li>
+<li> miss <- </li>
 </ol>
 
 Counting streak lengths manually for all 133 shots would get tedious, so we'll
@@ -109,7 +109,7 @@ from the 2009 NBA finals.
 <li> The typical length of a streak is 0 since the median of the distribution is at 0. </li>
 <li> The IQR of the distribution is 1. 
 <li> The longest streak of baskets is of length 4. </li>
-<li> The shortest streak is of length 1.</li>
+<li> The shortest streak is of length 1. <- </li>
 </ol>
 
 ## Compared to What?
