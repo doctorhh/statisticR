@@ -263,7 +263,11 @@ a hot hand.
 **Exercise**: Using `calc_streak`, compute the streak lengths of `sim_basket`, and save the results in a data frame called `sim_streak`. Note that since the `sim_streak` object is just a vector and not a variable in a data frame, we don't need to first select it from a data frame like we did earlier when we calculated the streak lengths for Kobe's shots.
 </div>
 ```{r sim-streak-lengths}
-# type your code for the Exercise here, and Knit
+
+sim_basket_45 <- sample(shot_outcomes,size=133, replace = TRUE, prob=c(0.45,0.55))
+table(sim_basket_45)
+sim_streak<-calc_streak(sim_basket_45)
+table(sim_streak)
 
 ```
    
@@ -271,7 +275,9 @@ a hot hand.
 **Exercise**: Make a plot of the distribution of simulated streak lengths of the independent shooter. What is the typical streak length for this simulated independent shooter with a 45% shooting percentage? How long is the player's longest streak of baskets in 133 shots?
 </div>
 ```{r plot-sim-streaks}
-# type your code for the Exercise here, and Knit
+
+ggplot(data = sim_streak, aes(x = length)) +
+  geom_histogram(binwidth = 1)
 
 ```
 
@@ -280,7 +286,7 @@ would you expect its streak distribution to compare to the distribution from the
 exercise above? 
 <ol>
 <li> Exactly the same  </li>
-<li> Somewhat similar </li>
+<li> Somewhat similar <- </li>
 <li> Totally different </li>
 </ol>
 
@@ -289,7 +295,7 @@ exercise above?
 of streak lengths for the simulated shooter? Using this comparison, do you have 
 evidence that the hot hand model fits Kobe's shooting patterns?
 <ol>
-<li> The distributions look very similar. Therefore, there doesn't appear to be evidence for Kobe Bryant's hot hand. </li>
+<li> The distributions look very similar. Therefore, there doesn't appear to be evidence for Kobe Bryant's hot hand. <- </li>
 <li> The distributions look very similar. Therefore, there appears to be evidence for Kobe Bryant's hot hand. </li>
 <li> The distributions look very different. Therefore, there doesn't appear to be evidence for Kobe Bryant's hot hand. </li>
 <li> The distributions look very different. Therefore, there appears to be evidence for Kobe Bryant's hot hand. </li>
