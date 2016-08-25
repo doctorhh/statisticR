@@ -53,13 +53,13 @@ library(dplyr)
 
 As a first question, we might be interested in exploring the relationship between the party the person voted for, the party that was their favourite, and if they believed that their vote makes a difference -- focusing on the question that are people who believe their vote makes a difference more likely to strategically vote for a party not their favourite. To achieve this, we familiarise ourselves with the variables `jpartyvote`, `jdiffvoting`, and `_singlefav`. First we check the codebook (see Appendix), then we explore the data.
 
-Viewing the entire dataset in the Data Viewer window by clicking on the data frame's name in the Environment or running the `View()` command in the Console can be ineffective since the Data Viewer only shows the first 100 columns of the data frame. 
+Viewing the entire dataset in the Data Viewer window by clicking on the data frames name in the Environment or running the `View()` command in the Console can be ineffective since the Data Viewer only shows the first 100 columns of the data frame. 
 
 Using the `str()` command on the entire dataset can also be equally ineffective. However we can subset the columns of interest and take a closer look at them. We can use the `dplyr` chain to select the variables of interest and investigate only their structure by adding `str()` at the end of the chain:
 
 ```{r eval=FALSE}
-selected_nzes2011 %>% 
-  select(jpartyvote, jdiffvoting, _singlefav) %>% 
+selection<-selected_nzes2011 %>% 
+  select(jpartyvote, jdiffvoting, X_singlefav) %>% 
   str()
 ```
 
@@ -75,7 +75,7 @@ The first line runs without any erros, but the second line gives an error
 
 ```{r eval=FALSE}
 selected_nzes2011 %>% 
-  select(jpartyvote, jdiffvoting, _singlefav)
+  select(jpartyvote, jdiffvoting, X_singlefav)
 ```
 
 We know that `select()` is a valid `dplyr` function, so that cannot be the problem. This means the problem might be the variable names. The issue is that R has rules about what variable names are legal (e.g. no spaces, starting with a letter) and when data is loaded, R will often fix variable names to make them legal. This happened to the `_singlefav` at the time of loading the data.
